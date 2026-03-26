@@ -249,14 +249,11 @@ git checkout uat && git pull origin uat
 git checkout -b hotfix/rollback-vX.Y.Z
 
 # Step 2 — 
-# Option A) Revert using tag range
-git revert goodVersion..badVersion
-# e.g. git revert v1.0..v1.1
 
-# Option B) Revert using merge commit
+# Option A) Revert using merge commit - if merge commit was used
 git revert -m 1 <merge-commit-hash>
 
-# Option C) Revert using commit sha
+# Option B) Revert using commit sha - if commit was not merge commit
 git revert <commit-sha>
 
 # Step 3 — push the hotfix branch
